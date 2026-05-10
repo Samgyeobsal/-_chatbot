@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "공익있다 - 공익활동 추천 서비스",
+  title: "공익잇다 - 공익활동 추천 서비스",
   description: "경기도 공익활동 DB 기반 AI 맞춤 추천 챗봇",
+  icons: { icon: "/favicon-leaf.png" },
 }
 
 export default function RootLayout({
