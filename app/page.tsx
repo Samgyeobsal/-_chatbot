@@ -197,34 +197,30 @@ export default function Home() {
         </div>
 
         <img src="/logo.png" alt="공익잇다 로고" className="h-12 mx-auto mb-3 object-contain" />
-        <div className={`inline-flex items-center gap-2 border rounded-full px-4 py-1.5 mb-3 ${t.badgeBg}`}>
-          <span className={`w-2 h-2 rounded-full animate-pulse ${t.badgeDot}`} />
-          <span className={`text-xs font-medium tracking-wider uppercase ${t.badgeText}`}>AI 추천 서비스</span>
-        </div>
         <h1 className={`text-2xl font-bold tracking-tight ${t.title}`}>
           공익잇다 <span className="text-emerald-500">AI 추천서비스</span>
         </h1>
         <p className={`text-sm mt-1 ${t.subtitle}`}>경기도 공익활동 DB 기반 맞춤 추천</p>
 
-        {/* DB 상태 */}
-        <div className="flex items-center justify-center gap-1.5 mt-3">
+        {/* DB 상태 알약 */}
+        <div className="flex justify-center mt-3">
           {dbStatus === "checking" && (
-            <>
+            <div className="inline-flex items-center gap-2 bg-yellow-50 border border-yellow-200 rounded-full px-4 py-1.5">
               <span className="w-2 h-2 rounded-full bg-yellow-400 animate-pulse" />
-              <span className={`text-xs ${t.subtitle}`}>DB 상태 확인 중...</span>
-            </>
+              <span className="text-xs text-yellow-600 font-medium">DB 상태 확인 중...</span>
+            </div>
           )}
           {dbStatus === "ready" && (
-            <>
+            <div className={`inline-flex items-center gap-2 border rounded-full px-4 py-1.5 ${t.badgeBg}`}>
               <span className="w-2 h-2 rounded-full bg-emerald-500" />
-              <span className="text-xs text-emerald-500 font-medium">DB 상태 : 준비됨</span>
-            </>
+              <span className={`text-xs font-medium ${t.badgeText}`}>DB 상태 : 준비됨</span>
+            </div>
           )}
           {dbStatus === "unavailable" && (
-            <>
+            <div className="inline-flex items-center gap-2 bg-red-50 border border-red-200 rounded-full px-4 py-1.5">
               <span className="w-2 h-2 rounded-full bg-red-400 animate-pulse" />
-              <span className="text-xs text-red-400 font-medium">DB 상태 : 준비되지 않음</span>
-            </>
+              <span className="text-xs text-red-500 font-medium">DB 상태 : 준비되지 않음</span>
+            </div>
           )}
         </div>
       </div>
